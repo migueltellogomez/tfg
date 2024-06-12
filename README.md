@@ -3,7 +3,7 @@ trabajo de fin de grado
 
 Este es el codigo de mi trabajo de fin de grado el cual consiste en un modelo de redes de neuronas que aprende de las partidas que un jugador realiza en el juego Hex. Esta compuesto por:
 
-1 un fichero python original llamado imitationagent.py que contiene un modelo de redes de neuronas.
+1 dos ficheros python originales llamado imitationagent.py y imitationagentv2.py que contienen las versiones de los modelos de redes de neuronas.
 
 2 unos ficheros python no originales modificados para adaptar al problema que permiten jugar a hex utilizando el protocolo hex gtp.
 

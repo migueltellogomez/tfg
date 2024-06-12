@@ -9,6 +9,8 @@ Este es el codigo de mi trabajo de fin de grado el cual consiste en un modelo de
 
 3 unos ficheros que contienen los pesos de la red de neuronas de una partida con tablero 8x8 para poder usar la misma red aunque se cierre el juego.
 
+4 ficheros de jupiter notebook con comparativas entre versiones y candidatos de los modelos de este proyecto.
+
 
 hex gtp es una interfaz basada en texto que permite mediante una consola de comandos y ademas se puede conectar a interfaces graficas como hexgui
 el codigo que he utilizado para realizar hex gtp es una adaptacion del que se puede encontrar en: https://github.com/kenjyoung/mopyhex.

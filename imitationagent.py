@@ -21,13 +21,17 @@ class imitationagent:
         "se crea la red de neuronas que se va a utilizar con tantas neuronas en la capa de entrada como grande sea el tablero"
         self.model.add(keras.Input(shape=(self.dim,)))
         self.model.add(Dense(self.dim, activation='relu'))
+        self.model.add(Dense(64, activation='relu'))
+        self.model.add(Dense(64, activation='relu'))
+        self.model.add(Dense(64, activation='relu'))
+        self.model.add(Dense(64, activation='relu'))
         self.model.add(Dense(16, activation='relu'))
         self.model.add(Dense(8, activation='relu'))
         "queremos que la salida sean dos(fila y columna) y con funcion de activacion relu para sacar numeros enteros enteros positivos"
         self.model.add(Dense(2, activation='relu'))
         self.model.compile(loss='mse', optimizer='adam', metrics=['accuracy'])
         "cargamos pesos anteriores"
-        self.model.load_weights('model')
+        #self.model.load_weights('model'+str(self.dim))
         print(self.model.summary())
 
     def best_move(self):
@@ -64,14 +68,12 @@ class imitationagent:
 		"""
 
         trainX = self.anterior.board.flatten().astype(int).tolist()
-
-
         trainy = move
         self.databaseX = pd.DataFrame([trainX])
         self.databaseY = pd.DataFrame([trainy])
 
         "se realiza data augmentation"
-        for i in range(10):
+        for i in range(100):
             X_train = pd.concat([self.databaseX, pd.DataFrame([trainX])], ignore_index=True)
             y_train = pd.concat([self.databaseY, pd.DataFrame([trainy])], ignore_index=True)
 
